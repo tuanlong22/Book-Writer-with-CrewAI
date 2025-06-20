@@ -20,7 +20,6 @@ class BrightDataWebSearchTool(BaseTool):
     args_schema: Type[BaseModel] = BrightDataWebSearchToolInput
 
     def _run(self, title: str) -> str:
-        
         host = 'brd.superproxy.io'
         port = 33335
 

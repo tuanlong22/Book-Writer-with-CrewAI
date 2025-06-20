@@ -1,16 +1,12 @@
 from crewai import Agent, Crew, Process, Task, LLM
 from crewai.project import CrewBase, agent, crew, task
 from pydantic import BaseModel
+import os 
 
-llm = LLM(
-    provider="ollama",
-    model="ollama/llama3.2",
-    api_base="http://localhost:11434",
-    config={
-        "temperature": 0.7,
-        "seed": 42
-    }
-)
+llm = LLM( model="gpt-4o-mini-2024-07-18",  
+            temperature=0,
+            api_key=os.getenv("OPENAI_API_KEY"),
+            api_base="https://api.openai.com/v1")
 
 class Outline(BaseModel):
     """Outline of the book"""
